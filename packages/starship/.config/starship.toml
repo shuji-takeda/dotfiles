@@ -3,3 +3,6 @@ success_symbol = "🐬"
 
 [package]
 disabled = true
+
+[character]
+vicmd_symbol = "[V](bold green) "
