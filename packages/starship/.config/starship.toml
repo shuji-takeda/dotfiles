@@ -1,2 +1,5 @@
 [character] 
 success_symbol = "🐬"
+
+[package]
+disabled = true
