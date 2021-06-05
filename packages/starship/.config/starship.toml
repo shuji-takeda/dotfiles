@@ -8,7 +8,7 @@ disabled = true
 
 [nodejs]
 symbol = "🐙"
-version_format = v{minor}
+version_format = "v{minor}"
 
 [git_branch]
 symbol = "🌱 "
