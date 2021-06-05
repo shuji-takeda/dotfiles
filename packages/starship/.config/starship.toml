@@ -1,8 +1,14 @@
+add_newline = false
+
 [character] 
-success_symbol = "🐬"
+success_symbol = "🐬 "
 
 [package]
 disabled = true
 
 [nodejs]
-format = "via [🤖 $version](bold green) "
+symbol = "🐙 "
+version_format =" v{minor}"
+
+[git_branch]
+symbol = "🌱 "
