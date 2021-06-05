@@ -8,4 +8,4 @@ disabled = true
 vicmd_symbol = "[V](bold green) "
 
 [nodejs]
-format = "via [🤖 $version](bold green) "
+disabled = true
