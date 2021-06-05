@@ -9,7 +9,19 @@ disabled = true
 
 [nodejs]
 symbol = "🐙 "
-version_format =" v{minor}"
 
 [git_branch]
 symbol = "🌱 "
+
+[git_status]
+style = "bold white"
+conflicted = " 🏳"
+ahead = " 💨 "
+behind =" 😰 "
+diverged = " 😵 "
+untracked = " 🤷‍ "
+stashed = " 📦 "
+modified = " 📝 "
+staged = '[++\($count\)](green)'
+renamed = " 👅 "
+deleted = " 🗑 "
