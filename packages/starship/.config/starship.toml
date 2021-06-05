@@ -6,3 +6,6 @@ disabled = true
 
 [character]
 vicmd_symbol = "[V](bold green) "
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
