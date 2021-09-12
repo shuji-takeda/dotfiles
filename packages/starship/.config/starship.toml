@@ -1,11 +1,14 @@
-add_newline = false
+add_newline = true
 
 [character] 
 success_symbol = "🐬 "
-error_symbol = "🥺 "
+error_symbol = "☠️ "
+
+[directory]
+style = "bold cyan"
 
 [package]
-disabled = true
+disabled = false
 
 [nodejs]
 symbol = "🐙 "

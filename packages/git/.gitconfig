@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	email = 12.hack.17.takeshu@gmail.com
+	name = "shuji-takeda "
+
+[color]
+ui = true
+
+[alias]
+	s = status -sb
+	aa = add -A
+	b = branch
+	c = commit
+	pso = push origin	
+
