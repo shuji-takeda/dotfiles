@@ -24,3 +24,8 @@ alias spark='open -a Spark'
 alias twitter='open -a Twitter'
 # alias calc = 'open -a Calculator'
 # alias notion = 'open -a Notion'
+
+# [NeoVim]
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -R"

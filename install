@@ -22,4 +22,19 @@ if [ ! -f /usr/local/bin/yabai]; then
     brew install yabai jq skhd
 fi
 
+# tmux install
+if [ ! -f /usr/local/bin/tmux]; then
+    brew install tmux 
+fi
+
+# vim install
+if [ ! -f /usr/local/bin/nvim]; then
+    brew install neovim
+fi
+
+# screen install
+if [ ! -f /usr/local/bin/screen]; then
+    brew install screen
+fi
+
 stow -v -d ~/dotfiles/packages -t ~ zsh starship
