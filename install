@@ -17,10 +17,10 @@ if [ ! -d ~/.config ]; then
     mkdir ~/.config
 fi
 
-if [ ! -f /usr/local/bin/yabai]; then
-    brew tap koekeishiya/formulae
-    brew install yabai jq skhd
-fi
+# if [ ! -f /usr/local/bin/yabai]; then
+#     brew tap koekeishiya/formulae
+#     brew install yabai jq skhd
+# fi
 
 # tmux install
 if [ ! -f /usr/local/bin/tmux]; then
@@ -33,8 +33,8 @@ if [ ! -f /usr/local/bin/nvim]; then
 fi
 
 # screen install
-if [ ! -f /usr/local/bin/screen]; then
-    brew install screen
-fi
+# if [ ! -f /usr/local/bin/screen]; then
+#     brew install screen
+# fi
 
 stow -v -d ~/dotfiles/packages -t ~ zsh starship
