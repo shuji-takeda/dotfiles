@@ -2,8 +2,24 @@
 
 set -e
 
+# brew install
 if [ ! -f /usr/local/bin/brew]; then
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# tmux install
+if [ ! -f /usr/local/bin/tmux]; then
+    brew install tmux 
+fi
+
+# vim install
+if [ ! -f /usr/local/bin/nvim]; then
+    brew install neovim
+fi
+
+# fzf install
+if [ ! -f /usr/local/bin/fzf]; then
+    brew install fzf
 fi
 
 if [ ! -d ~/dotfiles]; then
