@@ -32,9 +32,18 @@ if [ ! -f /usr/local/bin/nvim]; then
     brew install neovim
 fi
 
-# screen install
-# if [ ! -f /usr/local/bin/screen]; then
-#     brew install screen
+# yabai & skhd install
+# if [ ! -f /usr/local/bin/yabai]; then
+#     brew install yabai
+# fi
+# if [ ! -f /usr/local/bin/skhd]; then
+#     brew install skhd
 # fi
 
-stow -v -d ~/dotfiles/packages -t ~ zsh starship
+# starship install
+# if [ ! -f /usr/local/bin/starship]; then
+#     brew install starship
+# fi
+
+
+# stow -v -d ~/dotfiles/packages -t ~ zsh starship

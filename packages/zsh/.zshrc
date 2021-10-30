@@ -5,6 +5,18 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"
 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+# [zsh]
+setopt no_beep
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt auto_cd
+setopt hist_ignore_dups
+setopt share_history
+setopt inc_append_history
 # [alias]
 alias ll='ls -laF'
 alias vi='vim'
