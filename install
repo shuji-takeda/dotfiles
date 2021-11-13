@@ -7,21 +7,6 @@ if [ ! -f /usr/local/bin/brew]; then
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# tmux install
-if [ ! -f /usr/local/bin/tmux]; then
-    brew install tmux 
-fi
-
-# vim install
-if [ ! -f /usr/local/bin/nvim]; then
-    brew install neovim
-fi
-
-# fzf install
-if [ ! -f /usr/local/bin/fzf]; then
-    brew install fzf
-fi
-
 if [ ! -d ~/dotfiles]; then
     cd ~
     git clone https://github.com/shuji-takeda/dotfiles.git
@@ -37,16 +22,6 @@ fi
 #     brew tap koekeishiya/formulae
 #     brew install yabai jq skhd
 # fi
-
-# tmux install
-if [ ! -f /usr/local/bin/tmux]; then
-    brew install tmux 
-fi
-
-# vim install
-if [ ! -f /usr/local/bin/nvim]; then
-    brew install neovim
-fi
 
 # yabai & skhd install
 # if [ ! -f /usr/local/bin/yabai]; then

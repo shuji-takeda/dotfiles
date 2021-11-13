@@ -1,4 +1,4 @@
-# dotfiles　:penguin:
+# dotfiles 　
 
 ### This is my dotFiles.<br>If you have any useful commands you know, please pull request.
 
