@@ -1,4 +1,3 @@
-source ~/.config/nvim/plugin/plugins.vim
 set shell=/bin/zsh
 set shiftwidth=4
 set tabstop=4
@@ -8,6 +7,9 @@ set autoindent
 set hlsearch
 set clipboard=unnamed
 syntax on
+
+" Plugins Install
+source ~/.config/nvim/plugin/plugins.vim
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1

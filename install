@@ -4,20 +4,53 @@ set -e
 
 # brew install
 if [ ! -f /usr/local/bin/brew]; then
+    echo 'brew install👩‍💻'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if [ ! -d ~/dotfiles]; then
+    echo 'git clone😘'
     cd ~
     git clone https://github.com/shuji-takeda/dotfiles.git
 fi
 
-brew bundle -v --file=~/dotfiles/Brewfile
-
 if [ ! -d ~/.config ]; then
+    echo 'create ~/.config directories'
     mkdir ~/.config
 fi
 
+# Oh-My-Zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+    echo 'install oh-my-zsh'
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# App Install
+# brew bundle -v --file=~/dotfiles/Brewfile && echo -v
+
+cd ~/dotfiles
+
+# link to .zshrc
+if [ ! -f ~/.zshrc ]; then
+    echo 'link to zhsrc'
+    stow -v -d ~/dotfiles/packages zsh -t ~/
+fi
+
+# link to tmux
+if [ ! -f ~/.tmux.conf ]; then
+    echo 'link to tmux'
+    stow -v -d ~/dotfiles/packages tmux -t ~/
+fi
+
+# link to nvim
+if [ ! -d ~/.config/nvim ]; then
+    echo 'link to nvim'
+    mkdir ~/.config/nvim && cd $_
+    stow -v -d ~/dotfiles/packages vim -t ~/.config/nvim
+fi
+
+
+#[yabai & skhd SetUp]
 # if [ ! -f /usr/local/bin/yabai]; then
 #     brew tap koekeishiya/formulae
 #     brew install yabai jq skhd
@@ -35,6 +68,5 @@ fi
 # if [ ! -f /usr/local/bin/starship]; then
 #     brew install starship
 # fi
-
 
 # stow -v -d ~/dotfiles/packages -t ~ zsh starship

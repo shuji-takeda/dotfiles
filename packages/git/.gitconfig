@@ -1,4 +1,3 @@
-# This is Git's per-user configuration file.
 [user]
 	email = 12.hack.17.takeshu@gmail.com
 	name = "shuji-takeda "
@@ -12,4 +11,7 @@ ui = true
 	b = branch
 	c = commit
 	pso = push origin	
+
+[init]
+	defaultBranch = main
 
