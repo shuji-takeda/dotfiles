@@ -26,7 +26,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 # App Install
-# brew bundle -v --file=~/dotfiles/Brewfile && echo -v
+brew bundle -v --file=~/dotfiles/Brewfile && echo -v
 
 cd ~/dotfiles
 
