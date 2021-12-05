@@ -3,7 +3,7 @@
 set -e
 
 echo Install Started!📣
-if [ ! -f /usr/local/bin/brew]; then
+if ! -f /usr/local/bin/brew; then
     echo brew install👩‍💻
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
