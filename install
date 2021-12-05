@@ -2,49 +2,58 @@
 
 set -e
 
-# brew install
+echo Install Started!📣
 if [ ! -f /usr/local/bin/brew]; then
-    echo 'brew install👩‍💻'
+    echo brew install👩‍💻
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+echo App Install Section
+
+# brew bundle -v --file=~/dotfiles/Brewfile && echo -v
+
+echo App Install Section End
+
 if [ ! -d ~/dotfiles]; then
-    echo 'git clone😘'
+    echo git clone😘
     cd ~
     git clone https://github.com/shuji-takeda/dotfiles.git
 fi
 
 if [ ! -d ~/.config ]; then
-    echo 'create ~/.config directories'
+    echo create ~/.config directories
     mkdir ~/.config
 fi
 
 # Oh-My-Zsh
 if [ ! -d ~/.oh-my-zsh ]; then
-    echo 'install oh-my-zsh'
+    echo install oh-my-zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-# App Install
-brew bundle -v --file=~/dotfiles/Brewfile && echo -v
+echo powerLevel10k install section
+if [ ! -e ~/.p10k.zsh ]; then
+    echo powerLevel10k install start
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi;
 
 cd ~/dotfiles
 
 # link to .zshrc
 if [ ! -f ~/.zshrc ]; then
-    echo 'link to zhsrc'
+    echo link to zhsrc
     stow -v -d ~/dotfiles/packages zsh -t ~/
 fi
 
 # link to tmux
 if [ ! -f ~/.tmux.conf ]; then
-    echo 'link to tmux'
+    echo link to tmux
     stow -v -d ~/dotfiles/packages tmux -t ~/
 fi
 
 # link to nvim
 if [ ! -d ~/.config/nvim ]; then
-    echo 'link to nvim'
+    echo link to nvim
     mkdir ~/.config/nvim && cd $_
     stow -v -d ~/dotfiles/packages vim -t ~/.config/nvim
 fi
