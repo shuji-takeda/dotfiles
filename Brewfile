@@ -47,7 +47,6 @@ cask 'notion'
 cask 'skype'
 cask 'zoom'
 cask 'visual-studio-code'
-cask 'Microsoft Teams'
 
 # Applications install
 mas "Keynote", id: 409183694
@@ -57,7 +56,6 @@ mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Excel", id: 462058435
-mas "Microsoft Word", id: 462054705
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Twitter", id: 1482454543

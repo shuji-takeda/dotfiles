@@ -2,47 +2,44 @@
 
 set -e
 
-echo Install Started!📣
-if [ ! -f /usr/local/bin/brew]; then
+cd ~ && mkdir dotFiles_Bk
+
+DOTFILES_DIR=~/dotfiles/package
+BACKUP_DIR=~/dotFiles_Bk/
+
+echo Settings📣
+
+if ! -f /usr/local/bin/brew; then
     echo brew install👩‍💻
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo App Install Section
+echo App Install Section START
 
-# brew bundle -v --file=~/dotfiles/Brewfile && echo -v
+brew bundle -v --file=~/dotfiles/Brewfile && echo -v
 
 echo App Install Section End
-
-if [ ! -d ~/dotfiles]; then
-    echo git clone😘
-    cd ~
-    git clone https://github.com/shuji-takeda/dotfiles.git
-fi
 
 if [ ! -d ~/.config ]; then
     echo create ~/.config directories
     mkdir ~/.config
 fi
 
-# Oh-My-Zsh
-if [ ! -d ~/.oh-my-zsh ]; then
-    echo install oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#mv ~/.zshrc BACKUP_DIR/.
+#if f ~/.config/nvim/init.vim; then
+#    mv ~/.config/nvim/init.vim BACKUP_DIR/.
+#fi
+
+echo Install zinit
+if [ ! -d ~/.local/share/zinit]; then
+    sh -c "$(curl -fsSL https://git.io/zinit-install)"
 fi
-
-echo powerLevel10k install section
-if [ ! -e ~/.p10k.zsh ]; then
-    echo powerLevel10k install start
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-fi;
-
-cd ~/dotfiles
 
 # link to .zshrc
 if [ ! -f ~/.zshrc ]; then
     echo link to zhsrc
     stow -v -d ~/dotfiles/packages zsh -t ~/
+    source ~/.zshrc
 fi
 
 # link to tmux
@@ -51,13 +48,25 @@ if [ ! -f ~/.tmux.conf ]; then
     stow -v -d ~/dotfiles/packages tmux -t ~/
 fi
 
-# link to nvim
-if [ ! -d ~/.config/nvim ]; then
+# NeoVim setting section
+echo NeoVim Settings START
+
+if [ ! -f ~/.config/nvim/init.vim ]; then
     echo link to nvim
-    mkdir ~/.config/nvim && cd $_
     stow -v -d ~/dotfiles/packages vim -t ~/.config/nvim
 fi
 
+echo Vim-Plug/Plugins Install
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa" -V
+
+echo NeoVim Settings END
+
+if ! -e ~/.gitconfig; then
+    echo link to git
+    stow -v git -t DOTFILES_DIR
+fi 
 
 #[yabai & skhd SetUp]
 # if [ ! -f /usr/local/bin/yabai]; then

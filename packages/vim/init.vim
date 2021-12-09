@@ -1,3 +1,7 @@
+"source ~/.config/nvim/plugin/plugins.vim
+
+" Settings
+set number
 set shell=/bin/zsh
 set shiftwidth=4
 set tabstop=4
@@ -9,7 +13,13 @@ set clipboard=unnamed
 syntax on
 
 " Plugins Install
-source ~/.config/nvim/plugin/plugins.vim
+call plug#begin()
+ Plug 'ntk148v/vim-horizon'
+ Plug 'preservim/nerdtree'
+ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+ Plug 'sheerun/vim-polyglot'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
