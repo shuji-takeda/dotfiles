@@ -27,10 +27,13 @@ if [ ! -d ~/.config ]; then
     mkdir ~/.config
 fi
 
-#mv ~/.zshrc BACKUP_DIR/.
-#if f ~/.config/nvim/init.vim; then
-#    mv ~/.config/nvim/init.vim BACKUP_DIR/.
-#fi
+mv ~/.zshrc BACKUP_DIR/.
+if f ~/.config/nvim/init.vim; then
+    mv ~/.config/nvim/init.vim BACKUP_DIR/.
+fi
+
+# move your local .zshrc to custom .zshrc
+mv ~/.zshrc BACKUP_DIR
 
 echo Install zinit
 if [ ! -d ~/.local/share/zinit]; then
